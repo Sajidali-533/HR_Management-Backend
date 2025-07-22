@@ -54,6 +54,8 @@ public class EmployeeController {
         return ResponseEntity.ok("Employee registered successfully");
     }
 
+    
+
     @PutMapping("/updateEmployee")
     @PreAuthorize("hasAnyRole('ADMIN', 'HR')")
     public ResponseEntity<String> updateEmployee (@RequestBody RegisterEmployee registerEmployee){

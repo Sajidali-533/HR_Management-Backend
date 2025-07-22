@@ -3,6 +3,7 @@ package com.management.hr_managemnet.model;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.management.hr_managemnet.enums.AttandenceStatus;
 
 import jakarta.persistence.Entity;
@@ -30,12 +31,13 @@ public class Attandence {
 
     private LocalDate date;
     private LocalTime checkIn;
-    private LocalTime checkOun;
+    private LocalTime checkOut;
 
     @Enumerated (EnumType.STRING)
     private AttandenceStatus status;
     
     @ManyToOne
     @JoinColumn (name = "employee_id")
+    @JsonIgnore
     private Employee employee;
 }
