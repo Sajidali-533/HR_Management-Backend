@@ -50,7 +50,8 @@ public class SecurityConfig {
                                 .requestMatchers("/api/employees/updateEmployee").hasAnyRole("ADMIN", "HR")
                                 .requestMatchers("/api/attandences/register").hasAnyRole("ADMIN","HR")
                                 .requestMatchers("/api/users/addUsers").hasAnyRole("ADMIN", "HR")
-
+                                .requestMatchers("/api/employees/addEmployees").hasAnyRole("ADMIN", "HR")
+                                .requestMatchers("/api/attandences/addAttandences").hasAnyRole("ADMIN", "HR")
     
                                 .requestMatchers("/api/**").authenticated()
                                 .anyRequest().denyAll()                              
